@@ -1,7 +1,7 @@
 name: hyperlink
-version: 1.0.0
+version: 0.0.1
 description: A Flutter package for rendering text with clickable hyperlinks.
-homepage:
+repository: https://github.com/Odinachi/hyperlink
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
