@@ -1,39 +1,73 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# HyperLink
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+HyperLink is a Flutter package for rendering text with clickable hyperlinks.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- **Clickable Hyperlinks**: Automatically detects and renders clickable hyperlinks in text.
+- **Custom Styling**: Customize the style of hyperlinks and non-link text independently.
+- **URL Launching**: Handles launching URLs in the default browser when hyperlinks are tapped.
+- **Configurable**: Adjust text alignment, text direction, max lines, and more.
 
-## Getting started
+## Installation
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Add the following to your `pubspec.yaml` file:
+
+```yaml
+dependencies:
+  hyperlink: ^1.0.0
+```
+
+Then, run:
+
+```bash
+$ flutter pub get
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+Import the package in your Dart code:
 
 ```dart
-const like = 'sample';
+import 'package:hyperlink/hyperlink.dart';
 ```
 
-## Additional information
+Use the `HyperLink` widget to render text with clickable hyperlinks:
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+```dart
+HyperLink
+(
+textStyle: TextStyle(color: Colors.black, fontSize: 15),
+linkStyle: TextStyle(
+color: Colors.red, fontWeight: FontWeight.w700, fontSize: 20),
+text: 'Click here to visit (Google)[https://www.google.com] or Click here to visit (Apple)[https://www.apple.com]\t Happy Coding!!',
+)
+,
+```
+
+## Parameters
+
+- **text**: The text to display, including hyperlinks.
+- **linkStyle**: The style of the hyperlink text.
+- **textStyle**: The style of the non-link text.
+- **mode**: The launch mode for opening URLs.
+- **webViewConfiguration**: The configuration for web view.
+- **webOnlyWindowName**: The name of the web-only window.
+- **textAlign**: The text alignment.
+- **textDirection**: The text direction.
+- **softWrap**: Whether the text should break at soft line breaks.
+- **overflow**: How visual overflow should be handled.
+- **textScaleFactor**: The scaling factor for the text.
+- **maxLines**: The maximum number of lines for the text to span.
+- **locale**: The locale for this text.
+- **strutStyle**: The strut style to use.
+- **textWidthBasis**: The width basis for the text layout.
+- **textHeightBehavior**: The height behavior to use.
+- **selectionRegistrar**: The registrar for text selection.
+- **selectionColor**: The color to use when highlighting the text for selection.
+
+## Examples
+
+For examples and additional usage scenarios, see
+the [example](https://github.com/Odinachi/hyperlink/tree/master/example) directory.
+
