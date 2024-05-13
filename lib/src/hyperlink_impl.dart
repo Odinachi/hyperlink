@@ -53,9 +53,6 @@ class HyperLink extends StatelessWidget {
   /// How visual overflow should be handled.
   final TextOverflow overflow;
 
-  /// The scaling factor for the text.
-  final double textScaleFactor;
-
   /// The maximum number of lines for the text to span, wrapping if necessary.
   final int? maxLines;
 
@@ -91,7 +88,6 @@ class HyperLink extends StatelessWidget {
       this.textDirection,
       this.softWrap = true,
       this.overflow = TextOverflow.clip,
-      this.textScaleFactor = 1.0,
       this.maxLines,
       this.locale,
       this.strutStyle,
@@ -151,7 +147,6 @@ class HyperLink extends StatelessWidget {
       textAlign: textAlign,
       textDirection: textDirection,
       textHeightBehavior: textHeightBehavior,
-      textScaleFactor: textScaleFactor,
       textWidthBasis: textWidthBasis,
       selectionColor: selectionColor,
       selectionRegistrar: selectionRegistrar,
