@@ -9,3 +9,7 @@
 ## 0.0.3
 
 * Switch style
+
+* ## 0.0.4
+
+* Add image to readme

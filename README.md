@@ -17,7 +17,7 @@ Add the following to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  hyperlink: ^0.0.3
+  hyperlink: ^0.0.4
 ```
 
 Then, run:
