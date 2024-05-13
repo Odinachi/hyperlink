@@ -15,7 +15,7 @@ Add the following to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  hyperlink: ^0.0.2
+  hyperlink: ^0.0.3
 ```
 
 Then, run:
@@ -40,9 +40,8 @@ HyperLink
 textStyle: TextStyle(color: Colors.black, fontSize: 15),
 linkStyle: TextStyle(
 color: Colors.red, fontWeight: FontWeight.w700, fontSize: 20),
-text: 'Click here to visit (Google)[https://www.google.com] or Click here to visit (Apple)[https://www.apple.com]\t Happy Coding!!',
+text: 'Click here to visit [Google](https://www.google.com) or Click here to visit [Apple](https://www.apple.com)\t Happy Coding!!',
 )
-,
 ```
 
 ## Parameters

@@ -15,7 +15,7 @@ void main() {
             linkStyle: TextStyle(
                 color: Colors.red, fontWeight: FontWeight.w700, fontSize: 20),
             text:
-                'Click here to visit (Google)[https://www.google.com] or Click here to visit (Apple)[https://www.apple.com]\t Happy Coding!!',
+                'Click here to visit [Google](https://www.google.com) or Click here to visit [Apple](https://www.apple.com)\t Happy Coding!!',
           ),
         ),
       ),

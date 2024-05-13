@@ -103,7 +103,7 @@ class HyperLink extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // Regular expression to find "(link_title)[link_address]"
-    RegExp linkRegex = RegExp(r'\((.*?)\)\[(.*?)\]');
+    RegExp linkRegex = RegExp(r'\[(.*?)\]\((.*?)\)');
     List<InlineSpan> children = [];
 
     int currentIndex = 0;
