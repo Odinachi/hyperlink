@@ -7,10 +7,13 @@ void main() {
       appBar: AppBar(
         title: const Text('Link Rich Text Example'),
       ),
-      body: const Center(
+      body: Center(
         child: Padding(
           padding: EdgeInsets.all(20.0),
           child: HyperLink(
+            linkCallBack: (link) {
+              //Do whatsoever with the link
+            },
             textStyle: TextStyle(color: Colors.black, fontSize: 15),
             linkStyle: TextStyle(
                 color: Colors.red, fontWeight: FontWeight.w700, fontSize: 20),

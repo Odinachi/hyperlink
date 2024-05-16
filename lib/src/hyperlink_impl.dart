@@ -4,6 +4,8 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+typedef LinkCallBack = void Function(String msg);
+
 /// A widget for displaying text with clickable hyperlinks.
 ///
 /// Hyperlinks should be in the format "(link_title)[link_address]". For example:
@@ -74,27 +76,32 @@ class HyperLink extends StatelessWidget {
   /// The color to use when highlighting the text for selection.
   final Color? selectionColor;
 
-  const HyperLink(
-      {super.key,
-      required this.text,
-      this.linkStyle,
-      this.textStyle,
-      this.mode = LaunchMode.platformDefault,
-      this.webViewConfiguration = const WebViewConfiguration(),
-      this.webOnlyWindowName,
-      this.linkOnEnter,
-      this.linkOnExit,
-      this.textAlign = TextAlign.start,
-      this.textDirection,
-      this.softWrap = true,
-      this.overflow = TextOverflow.clip,
-      this.maxLines,
-      this.locale,
-      this.strutStyle,
-      this.textWidthBasis = TextWidthBasis.parent,
-      this.textHeightBehavior,
-      this.selectionRegistrar,
-      this.selectionColor});
+  /// This callback returns the link instead of opening the URL if initialized.
+  final LinkCallBack? linkCallBack;
+
+  const HyperLink({
+    super.key,
+    required this.text,
+    this.linkStyle,
+    this.textStyle,
+    this.mode = LaunchMode.platformDefault,
+    this.webViewConfiguration = const WebViewConfiguration(),
+    this.webOnlyWindowName,
+    this.linkOnEnter,
+    this.linkOnExit,
+    this.textAlign = TextAlign.start,
+    this.textDirection,
+    this.softWrap = true,
+    this.overflow = TextOverflow.clip,
+    this.maxLines,
+    this.locale,
+    this.strutStyle,
+    this.textWidthBasis = TextWidthBasis.parent,
+    this.textHeightBehavior,
+    this.selectionRegistrar,
+    this.selectionColor,
+    this.linkCallBack,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -118,14 +125,19 @@ class HyperLink extends StatelessWidget {
         onExit: linkOnExit,
         recognizer: TapGestureRecognizer()
           ..onTap = () async {
-            final url = Uri.parse(match.group(2) ?? "");
-            if (await canLaunchUrl(url)) {
-              await launchUrl(
-                url,
-                mode: mode,
-                webViewConfiguration: webViewConfiguration,
-                webOnlyWindowName: webOnlyWindowName,
-              );
+            final link = match.group(2) ?? "";
+            if (linkCallBack != null) {
+              linkCallBack!(link);
+            } else {
+              final url = Uri.parse(link);
+              if (await canLaunchUrl(url)) {
+                await launchUrl(
+                  url,
+                  mode: mode,
+                  webViewConfiguration: webViewConfiguration,
+                  webOnlyWindowName: webOnlyWindowName,
+                );
+              }
             }
           },
       ));
