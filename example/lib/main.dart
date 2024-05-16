@@ -9,13 +9,13 @@ void main() {
       ),
       body: Center(
         child: Padding(
-          padding: EdgeInsets.all(20.0),
+          padding: const EdgeInsets.all(20.0),
           child: HyperLink(
             linkCallBack: (link) {
               //Do whatsoever with the link
             },
-            textStyle: TextStyle(color: Colors.black, fontSize: 15),
-            linkStyle: TextStyle(
+            textStyle: const TextStyle(color: Colors.black, fontSize: 15),
+            linkStyle: const TextStyle(
                 color: Colors.red, fontWeight: FontWeight.w700, fontSize: 20),
             text:
                 'Click here to visit [Google](https://www.google.com) or Click here to visit [Apple](https://www.apple.com)\t Happy Coding!!',
