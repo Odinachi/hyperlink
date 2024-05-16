@@ -37,12 +37,17 @@ import 'package:hyperlink/hyperlink.dart';
 Use the `HyperLink` widget to render text with clickable hyperlinks:
 
 ```dart
+
 HyperLink
 (
 textStyle: TextStyle(color: Colors.black, fontSize: 15),
 linkStyle: TextStyle(
 color: Colors.red, fontWeight: FontWeight.w700, fontSize: 20),
-text: 'Click here to visit [Google](https://www.google.com) or Click here to visit [Apple](https://www.apple.com)\t Happy Coding!!',
+text:
+'Click here to visit [Google](https://www.google.com) or Click here to visit [Apple](https://www.apple.com)\t Happy Coding!!',
+linkCallBack: (link) {
+//the clicked link
+},
 )
 ```
 

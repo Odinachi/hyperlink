@@ -12,4 +12,8 @@
 
 * ## 0.0.4
 
-* Add image to readme
+* Add image to readme*
+
+* ## 0.0.5
+
+* Added linkCallBack
